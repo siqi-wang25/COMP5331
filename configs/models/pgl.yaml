@@ -1,0 +1,25 @@
+model:
+  name: pgl
+  embedding_dim: 64
+  ui_layers: 2
+  item_layers: 1
+  knn_k: 10
+  knn_chunk_size: 512
+  image_weight: 0.1
+  mode: local
+  local_ratio: 0.3
+  global_fraction: 0.25
+  global_threshold: 0.001
+  mask_ratio: 0.2
+  ssl_weight: 0.0
+  temperature: 0.2
+  damps_enabled: false
+  damps_mode: concat
+  damps_apc: true
+  damps_avrf: true
+  damps_imcf: true
+  damps_eps: 1.0e-6
+optimizer:
+  lr: 0.001
+  decay_base: 0.96
+  decay_steps: 50

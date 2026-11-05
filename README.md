@@ -1,6 +1,6 @@
 # COMP5331 · DAMPS 复现项目
 
-基于 [DAMPS.pdf](DAMPS.pdf)（KDD 2026）复现频域多模态表示校准框架 DAMPS，当前接入 MGCN 与 LIRDRec backbone，支持 APC、AVRF、IMCF 及组件消融。LIRDRec 提供 Baby、Sports、Clothing、Electronics 和 MicroLens 的配置。直接读取 MMRec 发布的数据，不依赖 MMRec 运行。
+基于 [DAMPS.pdf](DAMPS.pdf)（KDD 2026）复现频域多模态表示校准框架 DAMPS，当前接入 MGCN、LIRDRec、PGL 与 LGMRec backbone，支持 APC、AVRF、IMCF 及组件消融。LIRDRec 提供 Baby、Sports、Clothing、Electronics 和 MicroLens 的配置。直接读取 MMRec 发布的数据，不依赖 MMRec 运行。
 
 LIRDRec 已完成五个数据集 × 五组对照/消融 × 三个种子（999、2024、2025），共 75 组正式实验。完整 DAMPS 在五数据集四项指标的 20 项跨种子均值上均低于本项目基线，尚未复现论文所报提升；精选结果与论文对照见 [LIRDRec 实验结果](docs/results/lirdrec/)。基线参数、统一 DAMPS 接入方式、作者代码差异及运行命令见 [LIRDRec 接入说明](docs/lirdrec.md)。
 
@@ -133,3 +133,51 @@ python -m mmrecsys.cli evaluate --run runs/<run_id> --split test
 配置支持 `--set dotted.key=value`，未知字段报错。相对配置和数据路径按项目根解析。原始 `runs/`、`data/`、`cache/` 及 checkpoint 不提交 Git；可审阅的 LIRDRec 精选结果和说明保存在 `docs/results/lirdrec/`。
 
 代码位于 `src/mmrecsys/`，模型注册表负责声明所需模态和批次类型，训练器不包含模型名称分支。关键行为测试位于 `tests/`。
+
+
+## PGL 与 LGMRec
+
+两个模型各用一个实现文件、一个配置文件。`model.damps_enabled=false` 为基线，
+`true` 默认使用四路拼接版；`model.damps_mode=official` 切换为官方接入流程（使用COMP5331算子）。
+复用原有训练器和评估器；官方LGMRec接入仅初始化校准，DAMPS不随推荐损失更新。
+
+```bash
+python -m mmrecsys.cli train --model pgl --dataset baby
+python -m mmrecsys.cli train --model pgl --dataset baby --set model.damps_enabled=true
+python -m mmrecsys.cli train --model lgmrec --dataset baby
+python -m mmrecsys.cli train --model lgmrec --dataset baby --set model.damps_enabled=true
+```
+
+官方接入流程＋COMP5331算子（每路64维，PGL最终128维，LGMRec最终64维）：
+
+```bash
+python -m mmrecsys.cli train --model pgl --dataset baby --set model.damps_enabled=true --set model.damps_mode=official
+python -m mmrecsys.cli train --model lgmrec --dataset baby --set model.damps_enabled=true --set model.damps_mode=official
+```
+
+`damps_mode=concat` 保留四路拼接主方式；`official` 参考官方接入流程，但仍使用
+COMP5331原有 `nn/damps.py`，不引入另一份DAMPS算子。
+PGL在初始化校准后建物品图，每次前向继续调用DAMPS；外部模态投影仍无有效梯度。
+LGMRec仅初始化校准，随后冻结模态特征，训练时不再调用DAMPS。
+COMP5331的DAMPS固定输出D维，因此初始化特征也为D维；官方发布算子此前可重建到
+原始特征宽度。两者建图和LGMRec后续参数形状可能不同，不能混用实验成绩或checkpoint。
+接入流程、梯度路径与结果见 [PGL结果说明](docs/results/pgl/README.md) 和 [LGMRec结果说明](docs/results/lgmrec/README.md)。
+
+通过 `--set data.root=/absolute/path/to/data` 指定数据目录；支持 baby、sports、
+clothing、elec、microlens。配置为当前固定参数，不代表逐数据集搜索最优参数。
+
+- PGL：原图像、原文本与独立 DAMPS 图像、文本各 D 维，分别归一化后拼接，
+  配套四路用户嵌入，再做 UI/物品图传播。固定物品图由原始特征构建。
+  D=64 时基线128维，DAMPS版256维；默认 local 模式、SSL权重0。
+- LGMRec：原始特征保持冻结，原投影和 DAMPS 投影均可训练。四路局部传播后
+  分别归一化、拼接；协同 ID 与全局超图输出扩展到4D，再沿用加法融合。
+  全局超图分配仍由原始特征生成。D=64 时基线64维，DAMPS版256维。
+  评估仍按原方法采样 Gumbel 超图。
+
+原始分支在启用 DAMPS 后保留。DAMPS 核心实现未修改；拼接增加维度与参数量，
+实验差异不能单独归因于校准。按验证集选择最佳轮次，测试集仅用于最终评估。
+
+历史试验版本和旧代码已归档于本地 runs；旧实验使用独立快照，模型名仍可能记录为
+`pgl_damps_concat` / `lgmrec_damps_concat`。当前不再注册这些名称。
+
+最新五数据集、三种子公开汇总：[PGL 与 PGL+DAMPS](docs/results/pgl/)、[LGMRec 与 LGMRec+DAMPS](docs/results/lgmrec/)。固定报告种子999、2024、2025；五种子完整实验仅保留在本地 runs，不纳入提交。

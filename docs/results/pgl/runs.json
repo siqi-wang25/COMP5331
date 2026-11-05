@@ -1,0 +1,3122 @@
+[
+  {
+    "id": "baby_pgl_seed999",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 177,
+    "result": {
+      "best_epoch": 157,
+      "best_validation_metric": 0.09539831515017938,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.061616341573914234,
+        "Recall@20": 0.09563053486041398,
+        "NDCG@10": 0.033149316061104675,
+        "NDCG@20": 0.04187122715681874,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_pgl_damps_concat_seed999",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 125,
+    "result": {
+      "best_epoch": 105,
+      "best_validation_metric": 0.09555394335672043,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06106092887142001,
+        "Recall@20": 0.09493604321452095,
+        "NDCG@10": 0.032696805011752934,
+        "NDCG@20": 0.04140763077148928,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_seed999",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 285,
+    "result": {
+      "best_epoch": 265,
+      "best_validation_metric": 0.10151094998834412,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06631719545506838,
+        "Recall@20": 0.10273837169379055,
+        "NDCG@10": 0.036155233584272,
+        "NDCG@20": 0.04552282754370014,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_damps_concat_seed999",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 388,
+    "result": {
+      "best_epoch": 368,
+      "best_validation_metric": 0.10987588450573102,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07414179457201536,
+        "Recall@20": 0.11043515464128985,
+        "NDCG@10": 0.04028418492995711,
+        "NDCG@20": 0.04966136832165439,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_seed999",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 443,
+    "result": {
+      "best_epoch": 423,
+      "best_validation_metric": 0.0851340846085305,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.0566650586911079,
+        "Recall@20": 0.08465368679779525,
+        "NDCG@10": 0.030501096755165776,
+        "NDCG@20": 0.037578503808022926,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_damps_concat_seed999",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 311,
+    "result": {
+      "best_epoch": 291,
+      "best_validation_metric": 0.08907787484221333,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05870380243904504,
+        "Recall@20": 0.08945699995284885,
+        "NDCG@10": 0.03154290959619085,
+        "NDCG@20": 0.03933399631878057,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_seed999",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 350,
+    "result": {
+      "best_epoch": 330,
+      "best_validation_metric": 0.062034305745052434,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.041183372286125314,
+        "Recall@20": 0.06160287618837106,
+        "NDCG@10": 0.02291763918879594,
+        "NDCG@20": 0.028179878466794598,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_damps_concat_seed999",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 260,
+    "result": {
+      "best_epoch": 240,
+      "best_validation_metric": 0.06298296856178645,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04210339636304805,
+        "Recall@20": 0.06260460663854908,
+        "NDCG@10": 0.023510321927471954,
+        "NDCG@20": 0.028819624282080923,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_seed999",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 377,
+    "result": {
+      "best_epoch": 357,
+      "best_validation_metric": 0.11237241060178214,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07222488871797429,
+        "Recall@20": 0.11099875184855165,
+        "NDCG@10": 0.037527170106304346,
+        "NDCG@20": 0.04749381877592003,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_damps_concat_seed999",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 264,
+    "result": {
+      "best_epoch": 244,
+      "best_validation_metric": 0.1133230013494767,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07297688158137154,
+        "Recall@20": 0.11106879713331429,
+        "NDCG@10": 0.03812941968250023,
+        "NDCG@20": 0.047932807953083724,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_pgl_seed2024",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 251,
+    "result": {
+      "best_epoch": 231,
+      "best_validation_metric": 0.09788701955454333,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06281587872999549,
+        "Recall@20": 0.09746144358769711,
+        "NDCG@10": 0.03439136854524028,
+        "NDCG@20": 0.04327007516277018,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_pgl_damps_concat_seed2024",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 137,
+    "result": {
+      "best_epoch": 117,
+      "best_validation_metric": 0.09570136771602446,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06254799028005509,
+        "Recall@20": 0.09757035884317962,
+        "NDCG@10": 0.03350042178563835,
+        "NDCG@20": 0.042491245494978375,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_seed2024",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 453,
+    "result": {
+      "best_epoch": 433,
+      "best_validation_metric": 0.10664034017166993,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06898775747166107,
+        "Recall@20": 0.1073479471381039,
+        "NDCG@10": 0.037266790462654395,
+        "NDCG@20": 0.04715466392381073,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_damps_concat_seed2024",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 231,
+    "result": {
+      "best_epoch": 211,
+      "best_validation_metric": 0.10732746735677454,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07193383880135944,
+        "Recall@20": 0.10919508363676576,
+        "NDCG@10": 0.03854720555059064,
+        "NDCG@20": 0.048135531867365904,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_seed2024",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 447,
+    "result": {
+      "best_epoch": 427,
+      "best_validation_metric": 0.08593444537537767,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05628506867748242,
+        "Recall@20": 0.08494354554983696,
+        "NDCG@10": 0.030147125934460724,
+        "NDCG@20": 0.03742185896828723,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_damps_concat_seed2024",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 267,
+    "result": {
+      "best_epoch": 247,
+      "best_validation_metric": 0.08594570771431158,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05788373490407157,
+        "Recall@20": 0.08488545289901067,
+        "NDCG@10": 0.030730035938351594,
+        "NDCG@20": 0.037568534803624265,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_seed2024",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 269,
+    "result": {
+      "best_epoch": 249,
+      "best_validation_metric": 0.062068191632388255,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04039380363454614,
+        "Recall@20": 0.061131789767782746,
+        "NDCG@10": 0.022535393310537066,
+        "NDCG@20": 0.027889866159111973,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_damps_concat_seed2024",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 250,
+    "result": {
+      "best_epoch": 230,
+      "best_validation_metric": 0.0640896401567467,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04291722783806927,
+        "Recall@20": 0.06387648591858117,
+        "NDCG@10": 0.023999721143842787,
+        "NDCG@20": 0.02941508691576062,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_seed2024",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 342,
+    "result": {
+      "best_epoch": 322,
+      "best_validation_metric": 0.11227802156706966,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07187466664914713,
+        "Recall@20": 0.11135842398262269,
+        "NDCG@10": 0.037109767043722076,
+        "NDCG@20": 0.04727261351270483,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_damps_concat_seed2024",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 342,
+    "result": {
+      "best_epoch": 322,
+      "best_validation_metric": 0.11390377877005171,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07427826470311358,
+        "Recall@20": 0.11214311159281551,
+        "NDCG@10": 0.03898825161424566,
+        "NDCG@20": 0.04876108090004279,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_pgl_seed2025",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 212,
+    "result": {
+      "best_epoch": 192,
+      "best_validation_metric": 0.09611841702481971,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.060917790103956225,
+        "Recall@20": 0.09753729856326922,
+        "NDCG@10": 0.032829994982297946,
+        "NDCG@20": 0.04222384149055423,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_pgl_damps_concat_seed2025",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 126,
+    "result": {
+      "best_epoch": 106,
+      "best_validation_metric": 0.09587321994881778,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06176419449240228,
+        "Recall@20": 0.09660946792985875,
+        "NDCG@10": 0.03304500979096891,
+        "NDCG@20": 0.041978062748427095,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_seed2025",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 326,
+    "result": {
+      "best_epoch": 306,
+      "best_validation_metric": 0.10321153152627606,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06748476372401875,
+        "Recall@20": 0.10274843780237343,
+        "NDCG@10": 0.036503675265777684,
+        "NDCG@20": 0.045601228866591265,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_pgl_damps_concat_seed2025",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 282,
+    "result": {
+      "best_epoch": 262,
+      "best_validation_metric": 0.10614850370941377,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07028379960707622,
+        "Recall@20": 0.10594818952732318,
+        "NDCG@10": 0.037639578722955015,
+        "NDCG@20": 0.04683043914651201,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_seed2025",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 362,
+    "result": {
+      "best_epoch": 342,
+      "best_validation_metric": 0.08285390272594173,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.054417701271993295,
+        "Recall@20": 0.0821716012172254,
+        "NDCG@10": 0.02924461939717527,
+        "NDCG@20": 0.03628808077276475,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_pgl_damps_concat_seed2025",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 244,
+    "result": {
+      "best_epoch": 224,
+      "best_validation_metric": 0.08754098872919804,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05729325726279035,
+        "Recall@20": 0.08528345707491111,
+        "NDCG@10": 0.031085799876070224,
+        "NDCG@20": 0.0382090135409177,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_seed2025",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 283,
+    "result": {
+      "best_epoch": 263,
+      "best_validation_metric": 0.061363685597988715,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.040372527249049904,
+        "Recall@20": 0.06083002403442851,
+        "NDCG@10": 0.022467680588556315,
+        "NDCG@20": 0.02775396007317159,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_pgl_damps_concat_seed2025",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 219,
+    "result": {
+      "best_epoch": 199,
+      "best_validation_metric": 0.06400946145825447,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.042081884438217046,
+        "Recall@20": 0.06358807846965386,
+        "NDCG@10": 0.023393938903100195,
+        "NDCG@20": 0.02894431084523678,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_seed2025",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "pgl",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 385,
+    "result": {
+      "best_epoch": 365,
+      "best_validation_metric": 0.11278754887053659,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07187637722545852,
+        "Recall@20": 0.11033898421393451,
+        "NDCG@10": 0.03731486691795616,
+        "NDCG@20": 0.0472274547562187,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_pgl_damps_concat_seed2025",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "pgl_damps_concat",
+    "current_model_name": "pgl",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 313,
+    "result": {
+      "best_epoch": 293,
+      "best_validation_metric": 0.11578339884256078,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07496516851039975,
+        "Recall@20": 0.11406763680327046,
+        "NDCG@10": 0.03934276336839622,
+        "NDCG@20": 0.04942119804488678,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "pgl_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "item_layers": 1,
+        "knn_k": 10,
+        "knn_chunk_size": 512,
+        "image_weight": 0.1,
+        "mode": "local",
+        "local_ratio": 0.3,
+        "global_fraction": 0.25,
+        "global_threshold": 0.001,
+        "mask_ratio": 0.2,
+        "ssl_weight": 0.0,
+        "temperature": 0.2,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 0.96,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  }
+]

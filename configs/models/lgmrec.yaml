@@ -1,0 +1,23 @@
+model:
+  name: lgmrec
+  embedding_dim: 64
+  ui_layers: 2
+  modal_layers: 2
+  hyper_layers: 1
+  hyperedges: 4
+  keep_rate: 0.5
+  alpha: 0.3
+  contrastive_weight: 0.0001
+  regularization_weight: 0.000001
+  temperature: 0.2
+  contrastive_chunk: 8192
+  damps_enabled: false
+  damps_mode: concat
+  damps_apc: true
+  damps_avrf: true
+  damps_imcf: true
+  damps_eps: 1.0e-6
+optimizer:
+  lr: 0.001
+  decay_base: 1.0
+  decay_steps: 50

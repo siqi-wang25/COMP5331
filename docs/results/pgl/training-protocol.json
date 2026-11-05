@@ -1,0 +1,31 @@
+{
+  "datasets": [
+    "baby",
+    "sports",
+    "clothing",
+    "elec",
+    "microlens"
+  ],
+  "seeds": [
+    999,
+    2024,
+    2025
+  ],
+  "variants": [
+    "baseline",
+    "damps_concat"
+  ],
+  "selection": "Validation Recall@20 per run; report fixed seeds 999/2024/2025; no test or seed selection by observed performance",
+  "hyperparameter_search": false,
+  "model_parameters": "Fixed repository defaults across datasets; exact effective configuration in runs.json",
+  "epochs": 1000,
+  "patience": 20,
+  "batch_size": 2048,
+  "final_width_baseline": 128,
+  "final_width_damps": 256,
+  "channel_width": 64,
+  "damps_implementation_modified": false,
+  "feature_training": "Both native and DAMPS feature tables trainable",
+  "fusion": "Four separately normalized modality channels; see README",
+  "note": "Concatenation changes representation width and parameter count; not a capacity-controlled comparison"
+}

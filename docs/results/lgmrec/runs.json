@@ -1,0 +1,3062 @@
+[
+  {
+    "id": "baby_lgmrec_seed999",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 58,
+    "result": {
+      "best_epoch": 38,
+      "best_validation_metric": 0.09760098691057807,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06409775918775663,
+        "Recall@20": 0.1017039877068162,
+        "NDCG@10": 0.03541897252742517,
+        "NDCG@20": 0.04506557142417944,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_lgmrec_damps_concat_seed999",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 38,
+    "result": {
+      "best_epoch": 18,
+      "best_validation_metric": 0.09431518468674552,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.060067918282112165,
+        "Recall@20": 0.09368565165299544,
+        "NDCG@10": 0.03342914217017337,
+        "NDCG@20": 0.042084197839427503,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_seed999",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 75,
+    "result": {
+      "best_epoch": 55,
+      "best_validation_metric": 0.10490285900135546,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07042644182792505,
+        "Recall@20": 0.10553892362420933,
+        "NDCG@10": 0.03850161941038659,
+        "NDCG@20": 0.0475472645451301,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_damps_concat_seed999",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 42,
+    "result": {
+      "best_epoch": 22,
+      "best_validation_metric": 0.1041099769271974,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07088739825761568,
+        "Recall@20": 0.10556173121907152,
+        "NDCG@10": 0.038586822425575845,
+        "NDCG@20": 0.04752014837711334,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_seed999",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 91,
+    "result": {
+      "best_epoch": 71,
+      "best_validation_metric": 0.08145750289858752,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05486642317322491,
+        "Recall@20": 0.08060358324658728,
+        "NDCG@10": 0.02972917207024718,
+        "NDCG@20": 0.03625452126586209,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_damps_concat_seed999",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 43,
+    "result": {
+      "best_epoch": 23,
+      "best_validation_metric": 0.0857173686749435,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.058077538274049816,
+        "Recall@20": 0.0852916783033319,
+        "NDCG@10": 0.031761693548395385,
+        "NDCG@20": 0.03866405396803682,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_seed999",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 34,
+    "result": {
+      "best_epoch": 14,
+      "best_validation_metric": 0.06166906136478492,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.0410985597914547,
+        "Recall@20": 0.06161293639644642,
+        "NDCG@10": 0.022848748699129447,
+        "NDCG@20": 0.028145044714509678,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_damps_concat_seed999",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 28,
+    "result": {
+      "best_epoch": 8,
+      "best_validation_metric": 0.06418522436017642,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04291933000626405,
+        "Recall@20": 0.06428446694966214,
+        "NDCG@10": 0.02388490375956583,
+        "NDCG@20": 0.02939589310555115,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_seed999",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 78,
+    "result": {
+      "best_epoch": 58,
+      "best_validation_metric": 0.11103831008166125,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07154533887023772,
+        "Recall@20": 0.10944929975619173,
+        "NDCG@10": 0.03715330236371613,
+        "NDCG@20": 0.046885967035900374,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_damps_concat_seed999",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 999,
+    "latest_epoch": 58,
+    "result": {
+      "best_epoch": 38,
+      "best_validation_metric": 0.11697811066703034,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07851309446632945,
+        "Recall@20": 0.11587090101825805,
+        "NDCG@10": 0.04139764197350328,
+        "NDCG@20": 0.051027615511389575,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 999,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_lgmrec_seed2024",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 55,
+    "result": {
+      "best_epoch": 35,
+      "best_validation_metric": 0.0955481884191064,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06449074924389916,
+        "Recall@20": 0.09718944764843454,
+        "NDCG@10": 0.03501117513196189,
+        "NDCG@20": 0.04343357260080917,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_lgmrec_damps_concat_seed2024",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 48,
+    "result": {
+      "best_epoch": 28,
+      "best_validation_metric": 0.0952190549657765,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06201614833268215,
+        "Recall@20": 0.0970938010305457,
+        "NDCG@10": 0.0338977233611721,
+        "NDCG@20": 0.04287322346657643,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_seed2024",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 103,
+    "result": {
+      "best_epoch": 83,
+      "best_validation_metric": 0.10454967570320335,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07308563348930783,
+        "Recall@20": 0.10780529180790432,
+        "NDCG@10": 0.03934858256817642,
+        "NDCG@20": 0.0483315360130681,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_damps_concat_seed2024",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 58,
+    "result": {
+      "best_epoch": 38,
+      "best_validation_metric": 0.10634672473532562,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.073076548352547,
+        "Recall@20": 0.10667825551105511,
+        "NDCG@10": 0.03981248097183848,
+        "NDCG@20": 0.048507336302490295,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_seed2024",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 140,
+    "result": {
+      "best_epoch": 120,
+      "best_validation_metric": 0.08255854300488316,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05548700501857635,
+        "Recall@20": 0.08182902988295629,
+        "NDCG@10": 0.030149143295227346,
+        "NDCG@20": 0.036843214380728816,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_damps_concat_seed2024",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 56,
+    "result": {
+      "best_epoch": 36,
+      "best_validation_metric": 0.08638155372103122,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05679049287473387,
+        "Recall@20": 0.08517355859499205,
+        "NDCG@10": 0.0312434270953282,
+        "NDCG@20": 0.0384509039705613,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_seed2024",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 33,
+    "result": {
+      "best_epoch": 13,
+      "best_validation_metric": 0.06177919243232966,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.040802441807908284,
+        "Recall@20": 0.060996851786329416,
+        "NDCG@10": 0.02270909693834936,
+        "NDCG@20": 0.0279251343056554,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_damps_concat_seed2024",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 28,
+    "result": {
+      "best_epoch": 8,
+      "best_validation_metric": 0.06456460283020618,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04280005820774603,
+        "Recall@20": 0.06335899486957687,
+        "NDCG@10": 0.02389405389524542,
+        "NDCG@20": 0.029202509344331877,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_seed2024",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 86,
+    "result": {
+      "best_epoch": 66,
+      "best_validation_metric": 0.11083576714557358,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06986797181617263,
+        "Recall@20": 0.1083555416413186,
+        "NDCG@10": 0.03611207150198395,
+        "NDCG@20": 0.04602672045610864,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_damps_concat_seed2024",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2024,
+    "latest_epoch": 63,
+    "result": {
+      "best_epoch": 43,
+      "best_validation_metric": 0.11719262825943826,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07888136173097801,
+        "Recall@20": 0.11587081069471596,
+        "NDCG@10": 0.04193268812045453,
+        "NDCG@20": 0.05148051268770935,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2024,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_lgmrec_seed2025",
+    "dataset": "baby",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 57,
+    "result": {
+      "best_epoch": 37,
+      "best_validation_metric": 0.09462078634487993,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06508289559073824,
+        "Recall@20": 0.09931601825790563,
+        "NDCG@10": 0.034854052910706604,
+        "NDCG@20": 0.04365206766416126,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "baby_lgmrec_damps_concat_seed2025",
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 35,
+    "result": {
+      "best_epoch": 15,
+      "best_validation_metric": 0.09117529295081366,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.06086334639047422,
+        "Recall@20": 0.09236122196137625,
+        "NDCG@10": 0.03354614620309526,
+        "NDCG@20": 0.04165892644651263,
+        "n_users": 19445
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "baby",
+        "interactions": "baby.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_seed2025",
+    "dataset": "sports",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 73,
+    "result": {
+      "best_epoch": 53,
+      "best_validation_metric": 0.10508511910692586,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07195573230884203,
+        "Recall@20": 0.10554009410195152,
+        "NDCG@10": 0.03861318265802012,
+        "NDCG@20": 0.047298925052174624,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "sports_lgmrec_damps_concat_seed2025",
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 43,
+    "result": {
+      "best_epoch": 23,
+      "best_validation_metric": 0.10536008059808313,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07175495636013081,
+        "Recall@20": 0.10708520275349874,
+        "NDCG@10": 0.039327627272934186,
+        "NDCG@20": 0.0484316707584325,
+        "n_users": 35598
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "sports",
+        "interactions": "sports.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_seed2025",
+    "dataset": "clothing",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 92,
+    "result": {
+      "best_epoch": 72,
+      "best_validation_metric": 0.082167551053224,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.05434872758355126,
+        "Recall@20": 0.08115198754242094,
+        "NDCG@10": 0.02934081612528829,
+        "NDCG@20": 0.036147171849284926,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "clothing_lgmrec_damps_concat_seed2025",
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 69,
+    "result": {
+      "best_epoch": 49,
+      "best_validation_metric": 0.0858443141137939,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.058209984681917036,
+        "Recall@20": 0.08501789930687792,
+        "NDCG@10": 0.031848623758664714,
+        "NDCG@20": 0.03864356326915456,
+        "n_users": 39387
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "clothing",
+        "interactions": "clothing.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_seed2025",
+    "dataset": "elec",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 32,
+    "result": {
+      "best_epoch": 12,
+      "best_validation_metric": 0.06224049021863019,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.04108369967359214,
+        "Recall@20": 0.06124050597141808,
+        "NDCG@10": 0.022770563402348076,
+        "NDCG@20": 0.02798052457016488,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "elec_lgmrec_damps_concat_seed2025",
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 28,
+    "result": {
+      "best_epoch": 8,
+      "best_validation_metric": 0.06358931698084024,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.042619982342588486,
+        "Recall@20": 0.06277160920678636,
+        "NDCG@10": 0.023833080978756367,
+        "NDCG@20": 0.029045470993839792,
+        "n_users": 192403
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "elec",
+        "interactions": "elec.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_seed2025",
+    "dataset": "microlens",
+    "variant": "baseline",
+    "training_model_name": "lgmrec",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 103,
+    "result": {
+      "best_epoch": 83,
+      "best_validation_metric": 0.11193485856302147,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07297899654924588,
+        "Recall@20": 0.1097621376914451,
+        "NDCG@10": 0.037796945330798526,
+        "NDCG@20": 0.04728371713895864,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": false,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  },
+  {
+    "id": "microlens_lgmrec_damps_concat_seed2025",
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "training_model_name": "lgmrec_damps_concat",
+    "current_model_name": "lgmrec",
+    "status": "completed",
+    "seed": 2025,
+    "latest_epoch": 53,
+    "result": {
+      "best_epoch": 33,
+      "best_validation_metric": 0.11590035053690037,
+      "monitor": "Recall@20",
+      "test": {
+        "Recall@10": 0.07802172636599762,
+        "Recall@20": 0.11458865147122445,
+        "NDCG@10": 0.04092243143704994,
+        "NDCG@20": 0.050358031445081365,
+        "n_users": 98129
+      },
+      "evaluation_protocol": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096,
+        "tie_break": "item_id_ascending",
+        "padding": "excluded",
+        "aggregation": "macro_user_mean"
+      }
+    },
+    "config": {
+      "seed": 2025,
+      "data": {
+        "name": "microlens",
+        "interactions": "microlens.inter",
+        "separator": "\t",
+        "user_field": "userID",
+        "item_field": "itemID",
+        "split_field": "x_label",
+        "features": {
+          "image": "image_feat.npy",
+          "text": "text_feat.npy"
+        }
+      },
+      "model": {
+        "name": "lgmrec_damps_concat",
+        "embedding_dim": 64,
+        "ui_layers": 2,
+        "modal_layers": 2,
+        "hyper_layers": 1,
+        "hyperedges": 4,
+        "keep_rate": 0.5,
+        "alpha": 0.3,
+        "contrastive_weight": 0.0001,
+        "regularization_weight": 1e-06,
+        "temperature": 0.2,
+        "contrastive_chunk": 8192,
+        "damps_enabled": true,
+        "damps_apc": true,
+        "damps_avrf": true,
+        "damps_imcf": true,
+        "damps_eps": 1e-06
+      },
+      "optimizer": {
+        "name": "adam",
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "decay_base": 1.0,
+        "decay_steps": 50
+      },
+      "train": {
+        "epochs": 1000,
+        "batch_size": 2048,
+        "preload_to_device": true,
+        "eval_every": 1,
+        "patience": 20
+      },
+      "eval": {
+        "topk": [
+          10,
+          20
+        ],
+        "monitor": "Recall@20",
+        "mode": "max",
+        "history": "train",
+        "require_train_user": true,
+        "user_batch_size": 256,
+        "item_chunk_size": 4096
+      },
+      "runtime": {
+        "device": "cuda:0",
+        "num_threads": 2,
+        "deterministic": true
+      }
+    }
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "dataset": "baby",
+    "variant": "baseline",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.06455713467413135,
+    "sample_std": 0.0004959119903069668,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "baseline",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.09940315120438546,
+    "sample_std": 0.0022585309600390378,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "baseline",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.035094733523364556,
+    "sample_std": 0.00029158197289735595,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "baseline",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.04405040389638329,
+    "sample_std": 0.0008859226011882289,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.06098247100175618,
+    "sample_std": 0.00097956270204913,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.09438022488163914,
+    "sample_std": 0.002441546669418092,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.033624337244813576,
+    "sample_std": 0.00024388001638755202,
+    "expected_n": 3
+  },
+  {
+    "dataset": "baby",
+    "variant": "damps_concat",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.042205449250838856,
+    "sample_std": 0.0006161621067632206,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "baseline",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.07182260254202497,
+    "sample_std": 0.0013345852254919848,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "baseline",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.10629476984468839,
+    "sample_std": 0.0013081505240310938,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "baseline",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.03882112821219438,
+    "sample_std": 0.00046018220607598625,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "baseline",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.04772590853679094,
+    "sample_std": 0.0005389866472898228,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.07190630099009783,
+    "sample_std": 0.001102394408684721,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.10644172982787513,
+    "sample_std": 0.0007887963477066374,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.039242310223449504,
+    "sample_std": 0.0006172673385221664,
+    "expected_n": 3
+  },
+  {
+    "dataset": "sports",
+    "variant": "damps_concat",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.04815305181267871,
+    "sample_std": 0.0005494145863573603,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "baseline",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.05490071859178417,
+    "sample_std": 0.0005699131614311414,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "baseline",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.08119486689065483,
+    "sample_std": 0.0006138475735276224,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "baseline",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.029739710496920937,
+    "sample_std": 0.00040426661653293844,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "baseline",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.036414969165291945,
+    "sample_std": 0.00037473517011123256,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.057692671943566906,
+    "sample_std": 0.000784111482456143,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.08516104540173396,
+    "sample_std": 0.00013731776916689462,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.0316179148007961,
+    "sample_std": 0.00032721551999305654,
+    "expected_n": 3
+  },
+  {
+    "dataset": "clothing",
+    "variant": "damps_concat",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.03858617373591756,
+    "sample_std": 0.00011759421435523162,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "baseline",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.04099490042431837,
+    "sample_std": 0.0001668395787832951,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "baseline",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.0612834313847313,
+    "sample_std": 0.0003102773034510224,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "baseline",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.022776136346608963,
+    "sample_std": 6.999247711751445e-05,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "baseline",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.028016901196776654,
+    "sample_std": 0.00011437915545829618,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.04277979018553286,
+    "sample_std": 0.00015069953709394732,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.06347169034200846,
+    "sample_std": 0.0007626990492158322,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.02387067954452254,
+    "sample_std": 3.288115503588057e-05,
+    "expected_n": 3
+  },
+  {
+    "dataset": "elec",
+    "variant": "damps_concat",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.02921462448124094,
+    "sample_std": 0.00017552491703688668,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "baseline",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.0714641024118854,
+    "sample_std": 0.0015571025155950984,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "baseline",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.1091889930296518,
+    "sample_std": 0.0007385443832088376,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "baseline",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.037020773065499536,
+    "sample_std": 0.0008502193634118255,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "baseline",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.04673213487698922,
+    "sample_std": 0.0006424627732487134,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "metric": "Recall@10",
+    "n": 3,
+    "mean": 0.07847206085443503,
+    "sample_std": 0.00043128419651091907,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "metric": "Recall@20",
+    "n": 3,
+    "mean": 0.11544345439473282,
+    "sample_std": 0.0007402810483650289,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "metric": "NDCG@10",
+    "n": 3,
+    "mean": 0.041417587177002585,
+    "sample_std": 0.0005054235846771325,
+    "expected_n": 3
+  },
+  {
+    "dataset": "microlens",
+    "variant": "damps_concat",
+    "metric": "NDCG@20",
+    "n": 3,
+    "mean": 0.050955386548060096,
+    "sample_std": 0.0005647156827737768,
+    "expected_n": 3
+  }
+]

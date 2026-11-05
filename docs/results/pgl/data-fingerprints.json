@@ -1,0 +1,77 @@
+{
+  "baby": {
+    "fingerprint": "6ab087bfbbce8525fc3ea4bb7aca9c667f6a47bac9907eddf83145a1547cd2bb",
+    "train_fingerprint": "e2a1421025a0067cb0094b307e5287efdd96985faa1bbd10427c7496107d6d19",
+    "features": {
+      "image": "89ec4cda904d804465f8af30b214c2cade60d9f3021e31d5781a3e62771545a8",
+      "text": "85f122bf5881552b352f387097eff7855149af40938b1ef7ea78483803907cd4"
+    },
+    "n_users": 19445,
+    "n_items": 7050,
+    "interactions": {
+      "train": 118551,
+      "valid": 20559,
+      "test": 21682
+    }
+  },
+  "sports": {
+    "fingerprint": "7c9cf3227086ad967ecceedb54d76ca97aedc728dc1a7b9e54e5a455918f2172",
+    "train_fingerprint": "4532a8989ef7d9b547031595d718aaaaef8bad6c56844a1f3b8fe2d5dfc3df6d",
+    "features": {
+      "image": "287867140078f82b415594bfe5ccbf73a6e1dd68b6a6cca759db9ffc42996b39",
+      "text": "e6aae777b15dbfaf861a18e0543406bc6676d2e5d86387514c93eb4a200fc59e"
+    },
+    "n_users": 35598,
+    "n_items": 18357,
+    "interactions": {
+      "train": 218409,
+      "valid": 37899,
+      "test": 40029
+    }
+  },
+  "clothing": {
+    "fingerprint": "31c49982d6d31df2da5d8377783c3f488170226b1c54d5019251677136ffda94",
+    "train_fingerprint": "ce9f7eb584a76c94caaf4e93e9986797f3d35dd49741015417fac3ca6697827e",
+    "features": {
+      "image": "a775f254575ed1452c29539aafcd58f6a392937662c2cefa1997b28ca6895a2e",
+      "text": "c4310dfe40ca950cbf6d857aa9f3be8466572e9d2c01c264942566f84d97f158"
+    },
+    "n_users": 39387,
+    "n_items": 23033,
+    "interactions": {
+      "train": 197338,
+      "valid": 40150,
+      "test": 41189
+    }
+  },
+  "elec": {
+    "fingerprint": "84d9a2eb9de5444266d156a687388af7466167f1e70158b95a9e754fe5b3726e",
+    "train_fingerprint": "b344ee4ea36a18c8da156b83007f454ac17df4d39f72bcb85bff0ecdfd5a80a9",
+    "features": {
+      "image": "4327c5eb7b99af314d1590768e8be99f6965af369c71fe6af5606b90828ce579",
+      "text": "da9f420c9ff63340e91fdf86f9c78cea7db5a31710941e5b3e0cbbd2c7f6a5a1"
+    },
+    "n_users": 192403,
+    "n_items": 63001,
+    "interactions": {
+      "train": 1254441,
+      "valid": 211296,
+      "test": 223451
+    }
+  },
+  "microlens": {
+    "fingerprint": "f2af4ffe272abc0cc1b1c8d30ca3a31caf357016ed4a7ac0b370b4e31dba8bd4",
+    "train_fingerprint": "f10ec163664ce3a0efef6edf884e868f97e1b45c28075bc12c06752c544e36b1",
+    "features": {
+      "image": "20a624d4b84c3d48d3ae398b87e28c25dd59bc1102a7ab7ac7ef41ef0d2bb4e7",
+      "text": "069c76f7775f2afcd3f339e275841631488139053f894fd98d76bac72bf7402a"
+    },
+    "n_users": 98129,
+    "n_items": 17228,
+    "interactions": {
+      "train": 500064,
+      "valid": 101121,
+      "test": 103989
+    }
+  }
+}

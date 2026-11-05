@@ -1,0 +1,824 @@
+{
+  "seeds": [
+    999,
+    2024,
+    2025
+  ],
+  "updated_at_hong_kong": "2026-11-03T02:52:12+08:00",
+  "source_suites": {
+    "original": {
+      "suite_id": "five-dataset-concat-20261031T103528Z",
+      "updated_utc": "2026-11-02T11:19:44.769826+00:00"
+    },
+    "wide": {
+      "suite_id": "wide-baseline-256-three-datasets-20261102T010540Z",
+      "updated_utc": "2026-11-02T07:25:10.659730+00:00"
+    },
+    "official": {
+      "suite_id": "comp5331-official-style-20261102T134810Z",
+      "updated_utc": "2026-11-02T18:51:43.251261+00:00"
+    }
+  },
+  "summary": [
+    {
+      "dataset": "baby",
+      "variant": "baseline",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.061783336802621984,
+      "sample_std": 0.0009600003452516397,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "baseline",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0968764256704601,
+      "sample_std": 0.001079639489481465,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "baseline",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0334568931962143,
+      "sample_std": 0.000824878549421365,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "baseline",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04245504793671438,
+      "sample_std": 0.0007275206192941083,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "wide256",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06372783968695515,
+      "sample_std": 0.0006985731728128613,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "wide256",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.1006358136211569,
+      "sample_std": 0.0007809862863378205,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "wide256",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.034508507087340975,
+      "sample_std": 0.000547938101391816,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "wide256",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.043954728034139,
+      "sample_std": 0.0005876163951923961,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "official",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.054567386700325765,
+      "sample_std": 0.0031650165374487002,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "official",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0851344899969225,
+      "sample_std": 0.00442507562463024,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "official",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.02924673083162192,
+      "sample_std": 0.002054624332026185,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "official",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03709692289736785,
+      "sample_std": 0.0023486052745567295,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "concat",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06179103788129246,
+      "sample_std": 0.0007438940340587936,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "concat",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.09637195666251977,
+      "sample_std": 0.0013331216784050694,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "concat",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0330807455294534,
+      "sample_std": 0.00040299846410535366,
+      "status": "完成"
+    },
+    {
+      "dataset": "baby",
+      "variant": "concat",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.041958979671631584,
+      "sample_std": 0.0005420593510913474,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "baseline",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06759657221691606,
+      "sample_std": 0.0013387872218653255,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "baseline",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.10427825221142263,
+      "sample_std": 0.0026584385527608258,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "baseline",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03664189977090136,
+      "sample_std": 0.0005685236880133642,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "baseline",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04609290677803404,
+      "sample_std": 0.0009203438864433537,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "wide256",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.07153133565853381,
+      "sample_std": 0.0018817588941743779,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "wide256",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.10868110642325486,
+      "sample_std": 0.0013508785075527917,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "wide256",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03852489643833058,
+      "sample_std": 0.0009839945290156646,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "wide256",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04810540087030911,
+      "sample_std": 0.0008353238612645722,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "official",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0650008650387885,
+      "sample_std": 0.001641443169775279,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "official",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.09970698668940145,
+      "sample_std": 0.002552416325090723,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "official",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03497567290226358,
+      "sample_std": 0.0007576793947045188,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "official",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04392312254223125,
+      "sample_std": 0.000943772624202782,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "concat",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.07211981099348368,
+      "sample_std": 0.001935709309156871,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "concat",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.10852614260179293,
+      "sample_std": 0.002317072628272874,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "concat",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03882365640116759,
+      "sample_std": 0.0013438021811699235,
+      "status": "完成"
+    },
+    {
+      "dataset": "sports",
+      "variant": "concat",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0482091131118441,
+      "sample_std": 0.0014168982491069332,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "baseline",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.05578927621352787,
+      "sample_std": 0.00120291789736372,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "baseline",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0839229445216192,
+      "sample_std": 0.001523616438418,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "baseline",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.02996428069560059,
+      "sample_std": 0.0006478874314385671,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "baseline",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03709614784969163,
+      "sample_std": 0.0007041759027855379,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "wide256",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.05829828228716187,
+      "sample_std": 0.0017901006072156154,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "wide256",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0862211607165526,
+      "sample_std": 0.0023302633696071847,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "wide256",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.031175623596252346,
+      "sample_std": 0.001209177052416172,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "wide256",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03826259718342701,
+      "sample_std": 0.0013480088669904574,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "official",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04217860941145274,
+      "sample_std": 0.0023970897065689295,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "official",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06511267314451105,
+      "sample_std": 0.003576317929166342,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "official",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.022628973275336722,
+      "sample_std": 0.0016354531403386886,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "official",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.02844487607280013,
+      "sample_std": 0.0019381262849011366,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "concat",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.057960264868635654,
+      "sample_std": 0.0007083798770229003,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "concat",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.08654196997559022,
+      "sample_std": 0.002532321396909548,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "concat",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.031119581803537556,
+      "sample_std": 0.00040748841685353234,
+      "status": "完成"
+    },
+    {
+      "dataset": "clothing",
+      "variant": "concat",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.038370514887774175,
+      "sample_std": 0.0008937424708224619,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "baseline",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04064990105657378,
+      "sample_std": 0.0004621221004392249,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "baseline",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06118822999686077,
+      "sample_std": 0.00038950511878176286,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "baseline",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.022640237695963107,
+      "sample_std": 0.00024261068473775858,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "baseline",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.027941234899692722,
+      "sample_std": 0.00021755615398843516,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "wide256",
+      "metric": "Recall@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "wide256",
+      "metric": "Recall@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "wide256",
+      "metric": "NDCG@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "wide256",
+      "metric": "NDCG@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "official",
+      "metric": "Recall@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "official",
+      "metric": "Recall@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "official",
+      "metric": "NDCG@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "official",
+      "metric": "NDCG@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "elec",
+      "variant": "concat",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04236750287977812,
+      "sample_std": 0.00047619726800312087,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "concat",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.06335639034226137,
+      "sample_std": 0.0006668423854440518,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "concat",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.023634660658138313,
+      "sample_std": 0.00032146247177169783,
+      "status": "完成"
+    },
+    {
+      "dataset": "elec",
+      "variant": "concat",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.02905967401435944,
+      "sample_std": 0.0003140468637316857,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "baseline",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.07199197753085998,
+      "sample_std": 0.00020170881817629585,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "baseline",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.11089872001503628,
+      "sample_std": 0.0005170291445200038,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "baseline",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.03731726802266086,
+      "sample_std": 0.0002087118902724919,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "baseline",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.04733129568161452,
+      "sample_std": 0.00014254874765785093,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "wide256",
+      "metric": "Recall@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "wide256",
+      "metric": "Recall@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "wide256",
+      "metric": "NDCG@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "wide256",
+      "metric": "NDCG@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "official",
+      "metric": "Recall@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "official",
+      "metric": "Recall@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "official",
+      "metric": "NDCG@10",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "official",
+      "metric": "NDCG@20",
+      "n": 0,
+      "expected_n": 3,
+      "mean": null,
+      "sample_std": null,
+      "status": "未安排"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "concat",
+      "metric": "Recall@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.07407343826496163,
+      "sample_std": 0.0010098448545992683,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "concat",
+      "metric": "Recall@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.11242651517646675,
+      "sample_std": 0.0015193742247864724,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "concat",
+      "metric": "NDCG@10",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.0388201448883807,
+      "sample_std": 0.0006238955269006944,
+      "status": "完成"
+    },
+    {
+      "dataset": "microlens",
+      "variant": "concat",
+      "metric": "NDCG@20",
+      "n": 3,
+      "expected_n": 3,
+      "mean": 0.048705028966004434,
+      "sample_std": 0.000745776528744676,
+      "status": "完成"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "suite_id": "five-dataset-concat-20261031T103528Z",
+  "source_summary_updated_utc": "2026-11-02T00:53:02.567836+00:00",
+  "exported_at_hong_kong": "2026-11-02T08:53:07+08:00",
+  "source_summary_sha256": "2a44cbe0f12f367840012f2be1b8f818489a924b8465f8d041fdac78a79319c4",
+  "completed": 30,
+  "expected": 30,
+  "training_source_snapshot_sha256": {
+    "src/mmrecsys/models/lgmrec.py": "807d63863f2f8510b3dcff2f6cde50e4b54550b608a886a701e4f1226da5ba41",
+    "src/mmrecsys/models/lgmrec_damps_concat.py": "d49f2cf3308bd2f455b0b9a7052362894002ac32adad5b71ff5443db200eda68",
+    "src/mmrecsys/nn/damps.py": "e811ab4abf3f2023e8f8c82f9c39b04a973dfe210c82b468214ed2e9f7fb22c0",
+    "src/mmrecsys/experiment/runner.py": "f81da482dfe2d6c114c8b77910bcf910c9a7812965848fb64b3e4d49715e7a41",
+    "src/mmrecsys/engine/trainer.py": "8791b0f6094982d976791a2b9cbfdb092face7546196eef6095c33be59b9f758",
+    "configs/models/lgmrec.yaml": "a0353682fc1f8e51cbf29ae99be6a6c09f0a6e1d78c04340cbb282551c8fb043",
+    "configs/models/lgmrec_damps_concat.yaml": "e56e072bacab15210cc3b422fb0ac5eb66866421752bf053fd6ad19d817be730"
+  },
+  "model_layout_note": "Training used separate *_damps_concat model names. Current consolidated pgl/lgmrec with damps_enabled=true was checked against archived implementations for exact CPU tiny-data init/forward/loss/gradient parity. This is not a re-run after layout consolidation.",
+  "exported_seeds": [
+    999,
+    2024,
+    2025
+  ],
+  "export_scope": "Only fixed three-seed results; full five-seed suite retained locally",
+  "source_summary_sha256_scope": "Hash of local full-suite status, not publicly exported five-seed results"
+}
