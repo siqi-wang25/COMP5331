@@ -1,0 +1,102 @@
+[
+  {
+    "dataset": "baby",
+    "variant": "raw",
+    "seed": 2024
+  },
+  {
+    "dataset": "baby",
+    "variant": "full",
+    "seed": 2024
+  },
+  {
+    "dataset": "sports",
+    "variant": "raw",
+    "seed": 2024
+  },
+  {
+    "dataset": "sports",
+    "variant": "full",
+    "seed": 2024
+  },
+  {
+    "dataset": "clothing",
+    "variant": "raw",
+    "seed": 2024
+  },
+  {
+    "dataset": "clothing",
+    "variant": "full",
+    "seed": 2024
+  },
+  {
+    "dataset": "elec",
+    "variant": "raw",
+    "seed": 2024
+  },
+  {
+    "dataset": "elec",
+    "variant": "full",
+    "seed": 2024
+  },
+  {
+    "dataset": "microlens",
+    "variant": "raw",
+    "seed": 2024
+  },
+  {
+    "dataset": "microlens",
+    "variant": "full",
+    "seed": 2024
+  },
+  {
+    "dataset": "baby",
+    "variant": "raw",
+    "seed": 2025
+  },
+  {
+    "dataset": "baby",
+    "variant": "full",
+    "seed": 2025
+  },
+  {
+    "dataset": "sports",
+    "variant": "raw",
+    "seed": 2025
+  },
+  {
+    "dataset": "sports",
+    "variant": "full",
+    "seed": 2025
+  },
+  {
+    "dataset": "clothing",
+    "variant": "raw",
+    "seed": 2025
+  },
+  {
+    "dataset": "clothing",
+    "variant": "full",
+    "seed": 2025
+  },
+  {
+    "dataset": "elec",
+    "variant": "raw",
+    "seed": 2025
+  },
+  {
+    "dataset": "elec",
+    "variant": "full",
+    "seed": 2025
+  },
+  {
+    "dataset": "microlens",
+    "variant": "raw",
+    "seed": 2025
+  },
+  {
+    "dataset": "microlens",
+    "variant": "full",
+    "seed": 2025
+  }
+]

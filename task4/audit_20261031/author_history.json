@@ -1,0 +1,72 @@
+{
+  "head": "13dc1b8d1a9ee53fe0eca12ab2e4c8669f291cd0",
+  "branches": "* main\n  remotes/origin/HEAD -> origin/main\n  remotes/origin/main",
+  "tags": "v1.0.0          Update README.md",
+  "commits_checked": 35,
+  "smore_paths_by_commit": {
+    "13dc1b8d1a9ee53fe0eca12ab2e4c8669f291cd0": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "cd5b6957398e157f1217c7c25f44fd66287d5fff": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "af90958f5fb43214caeda9729fefd5c9044e26ac": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "c71f21802bf4e071695c4e10c841b2dd2382f021": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "8084a1faf49ae3e47e440faad604e1a28a1fa4bd": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "b3244cfc4794e4790988825784c9475aebc699ff": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "3d7f4efa49a02f37d10a04fef45101e452b55e87": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "d41667f357449339797d0bd8f68b70ea3f52226d": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "872dc77671dc5719109bd51a84e917a9f0de8239": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "9f6850a4ff5a41966552375b5cb77c86c19a2bc8": [
+      "src/configs/models/SMORE.yaml"
+    ],
+    "154203a99550325e6736be92c79fbe451c5f7ee8": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "c987b648f2ffb8afa8d7a0892f089f6b6b21929b": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "9e106e635161bc8d8c030810eed077c345de3db4": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "89ccb32b1de882adb287bc5e84eb22ebd4bb3324": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "7f9d53c07e56e23f439aed9b5672c0339302408e": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "173fb8caec8e4c3978d22a173b78acfe6395014c": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "c72b3460df326a9564a148bdd9ec957f5efc85d7": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "3709440afaff81d72f8ceccb7a2ddc1540cc976b": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "b9dff162377ab78891f4f11e1402ef7e34e67c78": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "f32a9cf58321ebb6e69dd4c662775868be126239": [
+      "src/configs/model/SMORE.yaml"
+    ],
+    "572200cff68e504ab5214b622629647520753545": [
+      "src/configs/model/SMORE.yaml"
+    ]
+  },
+  "python_smore_in_any_commit": false
+}

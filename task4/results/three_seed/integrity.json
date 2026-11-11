@@ -1,0 +1,83 @@
+{
+  "verified": true,
+  "new_runs": 20,
+  "paired_total_runs": 30,
+  "first_round_single_seed_ablations": 15,
+  "total_executed": 45,
+  "missing": [],
+  "all_new_runs_clean_commit": "1e02e05f949b2e47f897ff3776805e98baec3fb7",
+  "configs_data_environment_equal": true,
+  "checkpoint_epoch_validation_consistent": true,
+  "published_csv_matches_recomputed_statistics": true,
+  "earliest_start_beijing": "2026-10-31T10:24:50+08:00",
+  "latest_finish_beijing": "2026-10-31T14:04:58.743230+08:00",
+  "new_run_wall_hours": 3.6690953416666665,
+  "new_run_total_gpu_job_hours": 7.135212203396692,
+  "epochs_range": [
+    32,
+    111
+  ],
+  "mean_metric_directions": {
+    "positive": 7,
+    "negative": 12,
+    "ties": 1
+  },
+  "queue_yield_events": 0,
+  "r20": [
+    {
+      "dataset": "baby",
+      "raw_mean": 0.10183333333333333,
+      "full_mean": 0.10166666666666667,
+      "mean": -0.00016666666666666682,
+      "sample_std": 0.0007023769168568484,
+      "relative_mean_change_pct": -0.1636661211129298,
+      "positive": 1,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "dataset": "sports",
+      "raw_mean": 0.1137,
+      "full_mean": 0.11303333333333333,
+      "mean": -0.0006666666666666626,
+      "sample_std": 0.0007094598884597579,
+      "relative_mean_change_pct": -0.5863383172090261,
+      "positive": 1,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "dataset": "clothing",
+      "raw_mean": 0.09713333333333334,
+      "full_mean": 0.09736666666666667,
+      "mean": 0.0002333333333333354,
+      "sample_std": 0.0006429100507328663,
+      "relative_mean_change_pct": 0.24021962937543107,
+      "positive": 2,
+      "negative": 1,
+      "ties": 0
+    },
+    {
+      "dataset": "elec",
+      "raw_mean": 0.06326666666666667,
+      "full_mean": 0.06316666666666666,
+      "mean": -9.999999999999824e-05,
+      "sample_std": 9.999999999999593e-05,
+      "relative_mean_change_pct": -0.1580611169652238,
+      "positive": 0,
+      "negative": 2,
+      "ties": 1
+    },
+    {
+      "dataset": "microlens",
+      "raw_mean": 0.10993333333333333,
+      "full_mean": 0.11,
+      "mean": 6.666666666666858e-05,
+      "sample_std": 0.00011547005383792846,
+      "relative_mean_change_pct": 0.060642813826563294,
+      "positive": 1,
+      "negative": 0,
+      "ties": 2
+    }
+  ]
+}
