@@ -1,0 +1,87 @@
+{
+  "baby": {
+    "embedding_size": 64,
+    "n_ui_layers": 4,
+    "n_layers": 1,
+    "image_knn_k": 40,
+    "text_knn_k": 15,
+    "cl_loss": 0.01,
+    "reg_weight": 0.0001,
+    "dropout_rate": 0.1,
+    "learning_rate": 0.001,
+    "learning_rate_scheduler": [
+      0.96,
+      50
+    ],
+    "train_batch_size": 2048,
+    "stopping_step": 20
+  },
+  "sports": {
+    "embedding_size": 64,
+    "n_ui_layers": 3,
+    "n_layers": 1,
+    "image_knn_k": 10,
+    "text_knn_k": 10,
+    "cl_loss": 0.03,
+    "reg_weight": 0.0001,
+    "dropout_rate": 0,
+    "learning_rate": 0.001,
+    "learning_rate_scheduler": [
+      0.96,
+      50
+    ],
+    "train_batch_size": 2048,
+    "stopping_step": 20
+  },
+  "clothing": {
+    "embedding_size": 64,
+    "n_ui_layers": 3,
+    "n_layers": 1,
+    "image_knn_k": 40,
+    "text_knn_k": 10,
+    "cl_loss": 0.01,
+    "reg_weight": 1e-05,
+    "dropout_rate": 0,
+    "learning_rate": 0.001,
+    "learning_rate_scheduler": [
+      0.96,
+      50
+    ],
+    "train_batch_size": 2048,
+    "stopping_step": 20
+  },
+  "elec": {
+    "embedding_size": 64,
+    "n_ui_layers": 3,
+    "n_layers": 1,
+    "image_knn_k": 10,
+    "text_knn_k": 10,
+    "cl_loss": 0.01,
+    "reg_weight": 1e-05,
+    "dropout_rate": 0,
+    "learning_rate": 0.001,
+    "learning_rate_scheduler": [
+      0.96,
+      50
+    ],
+    "train_batch_size": 2048,
+    "stopping_step": 20
+  },
+  "microlens": {
+    "embedding_size": 64,
+    "n_ui_layers": 3,
+    "n_layers": 1,
+    "image_knn_k": 10,
+    "text_knn_k": 10,
+    "cl_loss": 0.01,
+    "reg_weight": 1e-05,
+    "dropout_rate": 0,
+    "learning_rate": 0.001,
+    "learning_rate_scheduler": [
+      0.96,
+      50
+    ],
+    "train_batch_size": 2048,
+    "stopping_step": 20
+  }
+}

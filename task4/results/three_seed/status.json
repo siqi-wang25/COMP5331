@@ -1,0 +1,9 @@
+{
+  "state": "complete",
+  "integrity_checks_passed": true,
+  "completed_new_runs": 20,
+  "expected_new_runs": 20,
+  "reference_runs": 10,
+  "total_expected": 30,
+  "missing": []
+}

@@ -1,0 +1,220 @@
+{
+  "source_repository": "https://github.com/xxxZhic/KDD2026_DAMPS",
+  "source_commit": "158bce16902d30645ae8fa83cf212f5cfbef4377",
+  "base_repository": "https://github.com/ustc-mkh/KDD2026_DAMPS.git",
+  "base_commit": "cafcc930546799f5ca393ad515fbd5c7b6d85e6d",
+  "original_pr": "https://github.com/ustc-mkh/KDD2026_DAMPS/pull/1",
+  "target_repository": "https://github.com/ustc-mkh/COMP5331",
+  "files": [
+    {
+      "original_path": "src/common/damps_task1.py",
+      "path": "task4/runtime/src/common/damps_task1.py",
+      "sha256": "e811ab4abf3f2023e8f8c82f9c39b04a973dfe210c82b468214ed2e9f7fb22c0",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "src/models/damps_projected.py",
+      "path": "task4/runtime/src/models/damps_projected.py",
+      "sha256": "0e8ced60f1e59289963c92d5abcee4a3814055761a381671742f89599521f2be",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "src/models/smore.py",
+      "path": "task4/runtime/src/models/smore.py",
+      "sha256": "6d1f32cddda062ec2443759af99eba03fb7c1990898c52d1bbf8eba1d86789f9",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "src/run_task4.py",
+      "path": "task4/runtime/src/run_task4.py",
+      "sha256": "f2befc6374b464ac7f554159445d9aa78c61ee9896a6f8dd1e662a96adf11226",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/README.md",
+      "path": "task4/runtime/ORIGINAL_README.md",
+      "sha256": "48686fd4ab4c39e93292c8848fa509ea363eab846f482eecb2f1450db9639d9e",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/audit_20261031/INTEGRATION_AUDIT.md",
+      "path": "task4/audit_20261031/INTEGRATION_AUDIT.md",
+      "sha256": "bea0a0726aa4298e6d3b0c7e13b9751996d69eaa99c8f3258dc07790b1372549",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/audit_20261031/author_history.json",
+      "path": "task4/audit_20261031/author_history.json",
+      "sha256": "f035d1da0caaca3373aa4d8361f69cbd3f809e49e54556c58eff071d707ed4bd",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/audit_20261031/fixed_protocol.json",
+      "path": "task4/audit_20261031/fixed_protocol.json",
+      "sha256": "b701bc974b3dd0c947ee073d453cd5d53d96009439cbea1d6fc10b9bec36426a",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/configs.json",
+      "path": "task4/configs.json",
+      "sha256": "d11c27912f66ecab4333b604a89bf0f05c73d08760fd96c387410023d5add7e2",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/dispatch.py",
+      "path": "task4/dispatch.py",
+      "sha256": "7f50f6e81754f8dcc4ab5977b380d3a36b77ff597ec4886f9227305dd8987c72",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/download_data.py",
+      "path": "task4/download_data.py",
+      "sha256": "7d9f72e873dc17ebbac1eba69d8efc92013748930103a305e1d9963a28512ecc",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/plan.json",
+      "path": "task4/plan.json",
+      "sha256": "5c6b1b534e46ca47d4feedcde7913658cdd33287a010d3c61e7a2ddd498e2fcb",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/plan_seeds_20261031.json",
+      "path": "task4/plan_seeds_20261031.json",
+      "sha256": "6df40c54242a7fc4486bc531ed41d5c3545f0066568bf6561d9817cf2b9eda62",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/requirements-lock.txt",
+      "path": "task4/requirements-lock.txt",
+      "sha256": "b37107a21d6cf9544f97bee422d86fed44f26f9f36ffa20adc6ca64063ac63ed",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/RESULTS.md",
+      "path": "task4/results/RESULTS.md",
+      "sha256": "66cc5c4a33f287b72d947ec1e3a382dfc78feb74bb8536a4db61908d40c0ca06",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/ablation.png",
+      "path": "task4/results/ablation.png",
+      "sha256": "d3c74b67cc1b08b5267ffc93602ae8669af68b52c51400f2476b3d645c8902fa",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/integrity.json",
+      "path": "task4/results/integrity.json",
+      "sha256": "aa559690f82726e2ca062fd4e2a3413ad565855a644091de8cca63d74b064ae4",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/results.csv",
+      "path": "task4/results/results.csv",
+      "sha256": "ee52563b70fdb307d07980f06aafecd3510777692fdec2030191e8bd7aed3ed8",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/RESULTS.md",
+      "path": "task4/results/three_seed/RESULTS.md",
+      "sha256": "e9e48aa84d0b7b342b81165fdade357f0bec6b18aa7d3b0b6c09c67e645af7e8",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/environment.txt",
+      "path": "task4/results/three_seed/environment.txt",
+      "sha256": "b37107a21d6cf9544f97bee422d86fed44f26f9f36ffa20adc6ca64063ac63ed",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/evidence.json",
+      "path": "task4/results/three_seed/evidence.json",
+      "sha256": "4abdc4a4d669e561f1b196025b516423a18b47974cebec6fd718b14677033e5d",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/integrity.json",
+      "path": "task4/results/three_seed/integrity.json",
+      "sha256": "fd75f7605a97212dba4bc2f9fb54f06a4f12f2d1b856af0c9b5feed4c40ba747",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/paired.csv",
+      "path": "task4/results/three_seed/paired.csv",
+      "sha256": "fad8d63330589088858235a08d9f36179ef3abd38652375e76d5d61b331c386f",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/per_run.csv",
+      "path": "task4/results/three_seed/per_run.csv",
+      "sha256": "2e9b4ef3593061b843d2059513323105cf245e843df44b0f033fea02a11747d3",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/status.json",
+      "path": "task4/results/three_seed/status.json",
+      "sha256": "dca28a4486531ef3a5bf196602f6e49dddab8a0c57ecb36c38796cb1cf911325",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/summary.csv",
+      "path": "task4/results/three_seed/summary.csv",
+      "sha256": "05a3ebd57848bcd626c921768c6c75fa65a813d240e55287daa3ac8b20096d05",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/results/three_seed/three_seed_comparison.png",
+      "path": "task4/results/three_seed/three_seed_comparison.png",
+      "sha256": "2ca1240b4b1aef7e2b912c2ae3feb8c683696fc3b4f8974dbfba13ae3d24114b",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/summarize.py",
+      "path": "task4/summarize.py",
+      "sha256": "748084677f21688ba2e465164225dcd21aa1add5c45cc7695268f8e667d1ff04",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/summarize_seeds.py",
+      "path": "task4/summarize_seeds.py",
+      "sha256": "6ee6942288fadce0a725fd1da898bd98c99be89759e33d3a3204f3a9ea3f5c70",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/test_adapter.py",
+      "path": "task4/test_adapter.py",
+      "sha256": "959479ddbfe4786f189d6b64e46ca95b43395fee7090dcaa36a3efbc340ff8a5",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/test_backbone.py",
+      "path": "task4/test_backbone.py",
+      "sha256": "b26195c401ba59619302c3fbe924d8a947cc7efa26289ac7592c7b0bfda227cb",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/test_dispatch.py",
+      "path": "task4/test_dispatch.py",
+      "sha256": "f277c1f3dd171947405bc04353601881711d8f902c0ab5af7d6d617c64d4e424",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/test_integration_route.py",
+      "path": "task4/test_integration_route.py",
+      "sha256": "1341714cb0aa55df79040962587ee8e8090dfcc5aa72386614ad881d39f90324",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/test_seed_summary.py",
+      "path": "task4/test_seed_summary.py",
+      "sha256": "705d836d21bbac6ecc768cb73708f9189874ac10f9ced210dbab1e823c3df373",
+      "git_mode": "100644"
+    },
+    {
+      "original_path": "task4/verify_fixed_protocol.py",
+      "path": "task4/verify_fixed_protocol.py",
+      "sha256": "30758443a54751e81578ffd208f9e5d893111d11dd5192104ff0a6cd2a687ddc",
+      "git_mode": "100644"
+    }
+  ]
+}

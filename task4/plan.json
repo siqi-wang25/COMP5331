@@ -1,0 +1,127 @@
+[
+  {
+    "dataset": "baby",
+    "variant": "raw",
+    "seed": 999
+  },
+  {
+    "dataset": "sports",
+    "variant": "raw",
+    "seed": 999
+  },
+  {
+    "dataset": "clothing",
+    "variant": "raw",
+    "seed": 999
+  },
+  {
+    "dataset": "elec",
+    "variant": "raw",
+    "seed": 999
+  },
+  {
+    "dataset": "microlens",
+    "variant": "raw",
+    "seed": 999
+  },
+  {
+    "dataset": "baby",
+    "variant": "full",
+    "seed": 999
+  },
+  {
+    "dataset": "sports",
+    "variant": "full",
+    "seed": 999
+  },
+  {
+    "dataset": "clothing",
+    "variant": "full",
+    "seed": 999
+  },
+  {
+    "dataset": "elec",
+    "variant": "full",
+    "seed": 999
+  },
+  {
+    "dataset": "microlens",
+    "variant": "full",
+    "seed": 999
+  },
+  {
+    "dataset": "baby",
+    "variant": "no_apc",
+    "seed": 999
+  },
+  {
+    "dataset": "sports",
+    "variant": "no_apc",
+    "seed": 999
+  },
+  {
+    "dataset": "clothing",
+    "variant": "no_apc",
+    "seed": 999
+  },
+  {
+    "dataset": "elec",
+    "variant": "no_apc",
+    "seed": 999
+  },
+  {
+    "dataset": "microlens",
+    "variant": "no_apc",
+    "seed": 999
+  },
+  {
+    "dataset": "baby",
+    "variant": "no_avrf",
+    "seed": 999
+  },
+  {
+    "dataset": "sports",
+    "variant": "no_avrf",
+    "seed": 999
+  },
+  {
+    "dataset": "clothing",
+    "variant": "no_avrf",
+    "seed": 999
+  },
+  {
+    "dataset": "elec",
+    "variant": "no_avrf",
+    "seed": 999
+  },
+  {
+    "dataset": "microlens",
+    "variant": "no_avrf",
+    "seed": 999
+  },
+  {
+    "dataset": "baby",
+    "variant": "no_imcf",
+    "seed": 999
+  },
+  {
+    "dataset": "sports",
+    "variant": "no_imcf",
+    "seed": 999
+  },
+  {
+    "dataset": "clothing",
+    "variant": "no_imcf",
+    "seed": 999
+  },
+  {
+    "dataset": "elec",
+    "variant": "no_imcf",
+    "seed": 999
+  },
+  {
+    "dataset": "microlens",
+    "variant": "no_imcf",
+    "seed": 999
+  }
+]

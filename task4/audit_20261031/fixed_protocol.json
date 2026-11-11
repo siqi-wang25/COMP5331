@@ -1,0 +1,181 @@
+{
+  "base_training_commit": "a039f9805dacd79a661b63cc8f0160265b3e503a",
+  "new_seeds": [
+    2024,
+    2025
+  ],
+  "reference_seed": 999,
+  "new_runs": 20,
+  "scope": "Raw and projected Full only, five datasets, unchanged model/training/backbone settings",
+  "file_sha256": {
+    "src/run_task4.py": "f2befc6374b464ac7f554159445d9aa78c61ee9896a6f8dd1e662a96adf11226",
+    "src/models/smore.py": "6d1f32cddda062ec2443759af99eba03fb7c1990898c52d1bbf8eba1d86789f9",
+    "src/models/damps_projected.py": "0e8ced60f1e59289963c92d5abcee4a3814055761a381671742f89599521f2be",
+    "src/common/damps_task1.py": "e811ab4abf3f2023e8f8c82f9c39b04a973dfe210c82b468214ed2e9f7fb22c0",
+    "src/models/damps.py": "f0183b7bf9fa238f3ffea1af6a86f5fba6d193f6c81a961fc9338e8a1062a9a9",
+    "task4/configs.json": "d11c27912f66ecab4333b604a89bf0f05c73d08760fd96c387410023d5add7e2",
+    "task4/requirements-lock.txt": "b37107a21d6cf9544f97bee422d86fed44f26f9f36ffa20adc6ca64063ac63ed"
+  },
+  "reference_data": {
+    "baby": {
+      "users": 19445,
+      "items": 7050,
+      "interactions": 160792,
+      "splits": {
+        "0": 118551,
+        "2": 21682,
+        "1": 20559
+      },
+      "files": {
+        "baby.inter": {
+          "bytes": 4362239,
+          "sha256": "e0abb033ea5cc538bb2becd8c3dc50b619f28f7974ba61f5ed11ce27cf405940"
+        },
+        "image_feat.npy": {
+          "bytes": 231014528,
+          "sha256": "36c3be592b98506189a7d5de71b21577cf626f0293b539d861534673b3e9fd70",
+          "shape": [
+            7050,
+            4096
+          ]
+        },
+        "text_feat.npy": {
+          "bytes": 10828928,
+          "sha256": "6667f2ad655c9ecc97cb3383f58988864ef51ec0b39c158b15986c66769f2dc4",
+          "shape": [
+            7050,
+            384
+          ]
+        }
+      }
+    },
+    "sports": {
+      "users": 35598,
+      "items": 18357,
+      "interactions": 296337,
+      "splits": {
+        "0": 218409,
+        "2": 40029,
+        "1": 37899
+      },
+      "files": {
+        "sports.inter": {
+          "bytes": 8278383,
+          "sha256": "b8a43979c7984a01a8ab9713ea29a3cf13a65b1784dbadc2162fa932daf1c6a0"
+        },
+        "image_feat.npy": {
+          "bytes": 601522304,
+          "sha256": "222f924a0694b6c7e2bc26ea4bc2ef4ec89f7045aa5105ef463af8455c7a7695",
+          "shape": [
+            18357,
+            4096
+          ]
+        },
+        "text_feat.npy": {
+          "bytes": 28196480,
+          "sha256": "27d6087f0d8644b8245c60052425530c6446dffe61024b8126db0009ad94de84",
+          "shape": [
+            18357,
+            384
+          ]
+        }
+      }
+    },
+    "clothing": {
+      "users": 39387,
+      "items": 23033,
+      "interactions": 278677,
+      "splits": {
+        "0": 197338,
+        "2": 41189,
+        "1": 40150
+      },
+      "files": {
+        "clothing.inter": {
+          "bytes": 7840508,
+          "sha256": "1d142e4d14079cc509ac2003978eb945f7759d8875d003345cbc863dc303235a"
+        },
+        "image_feat.npy": {
+          "bytes": 754745472,
+          "sha256": "050ea2d0d05bdd441053cc4d9ac38fd570c9611cc49357f442c1c7b8c9943fbc",
+          "shape": [
+            23033,
+            4096
+          ]
+        },
+        "text_feat.npy": {
+          "bytes": 35378816,
+          "sha256": "17d9e036514283fb0a0dda71789fe56d0c128b60d8f350e7b7ab83ac4c5960dd",
+          "shape": [
+            23033,
+            384
+          ]
+        }
+      }
+    },
+    "elec": {
+      "users": 192403,
+      "items": 63001,
+      "interactions": 1689188,
+      "splits": {
+        "0": 1254441,
+        "2": 223451,
+        "1": 211296
+      },
+      "files": {
+        "elec.inter": {
+          "bytes": 49216870,
+          "sha256": "3586c6ab2d4b2a7a0f69c5f6149dbdf7a229a092c37cfee1244f49734afa8fb5"
+        },
+        "image_feat.npy": {
+          "bytes": 2064416896,
+          "sha256": "1cdaa24a8493a66362845913412c868a011324f2e9060150245df026f8f89cb0",
+          "shape": [
+            63001,
+            4096
+          ]
+        },
+        "text_feat.npy": {
+          "bytes": 96769664,
+          "sha256": "ae49f620ad95301914b17eab868f9c06e4da02a699a8db036e1b077eeedbc239",
+          "shape": [
+            63001,
+            384
+          ]
+        }
+      }
+    },
+    "microlens": {
+      "users": 98129,
+      "items": 17228,
+      "interactions": 705174,
+      "splits": {
+        "0": 500064,
+        "2": 103989,
+        "1": 101121
+      },
+      "files": {
+        "microlens.inter": {
+          "bytes": 21354300,
+          "sha256": "bdc0bda6725ecec664178199a6f3b7024c52c30ab0c170e7bcfd547310cd16d7"
+        },
+        "image_feat.npy": {
+          "bytes": 70566016,
+          "sha256": "39de7154581be32f32f3ad0a90d4c0c1410537722d8209c880b8962afcaabbd3",
+          "shape": [
+            17228,
+            1024
+          ]
+        },
+        "text_feat.npy": {
+          "bytes": 70566016,
+          "sha256": "40d087f70d6561189c00622d69cfabbf728c1b9982f05136c850098385697981",
+          "shape": [
+            17228,
+            1024
+          ]
+        }
+      }
+    }
+  }
+}
